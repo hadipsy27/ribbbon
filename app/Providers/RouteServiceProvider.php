@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Gate;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -63,11 +64,12 @@ class RouteServiceProvider extends ServiceProvider
         			return Redirect::to('/');
         		}
         	}else{
-        		return Redirect::to('/');
+        		return Redirect::to('/admin');
         	}
         });
 
         parent::boot($router);
+
     }
 
     /**

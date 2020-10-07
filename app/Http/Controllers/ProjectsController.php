@@ -141,7 +141,7 @@ class ProjectsController extends BaseController {
         }
 
         $project_name	= Project::find($project_id)->pluck('name');
-        $owner_id	    = Project::find($project_id)->pluck('user_id');
+        // $owner_id	    = Project::find($project_id)->pluck('user_id');
         $project_url 	= url() . '/projects/'.$project_id;
         $invited_user   = User::whereEmail($email)->get();
 
@@ -154,9 +154,9 @@ class ProjectsController extends BaseController {
 			return $this->setStatusCode(406)->makeResponse('A user with that email has already been invited.');
 		}
 
-        if(Auth::id() != $owner_id){
-            return $this->setStatusCode(406)->makeResponse('Only the project owner can invite a user.');
-        }
+        // if(Auth::id() != $owner_id){
+        //     return $this->setStatusCode(406)->makeResponse('Only the project owner can invite a user.');
+        // }
 		// Save the relationship between user and project.
 		$pu				= 	new Projectuser();
 		$pu->project_id	=	$project_id;

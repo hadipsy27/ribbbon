@@ -17,7 +17,7 @@ class AdminController extends BaseController {
      * @return mixed
      */
     public function index(){
-        if( Auth::user()->email != env('ADMIN_EMAIL') ){
+        if( Auth::user()->email != 'ceesco53@gmail.com' ){
             return Redirect::back();
         }
 
