@@ -30,6 +30,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     protected $fillable = [
         'full_name',
         'email',
+        'nomor_induk',
         'password',
         'title',
         'bio',

@@ -5,8 +5,8 @@
 <div id="client">
     <div class="row">
         <div class="col-xs-12 page-title-section">
-            <h1 class="pull-left">Clients</h1>
-            <a v-on:click="showCreateForm()" class="btn btn-primary pull-right" title="Create new client">+ New Client</a>
+            <h1 class="pull-left">Teacher</h1>
+            <a v-on:click="showCreateForm()" class="btn btn-primary pull-right" title="Create new client">+ New Teacher</a>
             <div class="clearfix"></div>
         </div>
     </div>
@@ -34,9 +34,9 @@
                                 </div>
                             </header>
                             <hr>
-                            <span v-on:click="showNewProjectForm(client.id, $index)" title="Create new project" class="btn btn-default pull-right">New Project</span>
+                            <span v-on:click="showNewProjectForm(client.id, $index)" title="Create new task" class="btn btn-default pull-right">New Task</span>
                             <template v-if="client.projects.length > 0">
-                                <h4>Projects</h4>
+                                <h4>Tasks</h4>
                                 <table class="table">
                                     <thead>
                                     <tr>
@@ -68,15 +68,16 @@
     <template v-if="clients.length == 0">
         <div class="clearfix"></div>
         <p class="alert alert-warning">
-            Your clients will be listed here once you create some.
-            Create a new client <a v-on:click="showCreateForm()">now</a>.
+            {{-- Your clients will be listed here once you create some.
+            Create a new Client <a v-on:click="showCreateForm()">now</a>. --}}
+            Your Task is Empty
         </p>
     </template>
 
 	{{-- FORMS --}}
 	<div class="popup-form new-client">
 		<header>
-			<p class="pull-left">New Client</p>
+			<p class="pull-left">New Teacher</p>
 			<div class="actions pull-right">
 				<i title="Minimze "class="ion-minus-round"></i>
 				<i title="Close" class="ion-close-round"></i>
@@ -87,7 +88,7 @@
 			<form>
 				<span v-if="msg.success != null" class="status-msg success-msg">@{{ msg.success }}</span>
 				<span v-if="msg.error != null" class="status-msg error-msg">@{{ msg.error }}</span>
-				<input v-model="client.name" placeholder="Client Name" type="text" class="form-control first">
+				<input v-model="client.name" placeholder="Teacher Name" type="text" class="form-control first">
 				<input v-model="client.email" placeholder="Email" type="text" class="form-control">
 				<input v-model="client.point_of_contact" placeholder="Point Of Contact" type="text" class="form-control">
 				<input v-model="client.phone_number" placeholder="Contact Number" type="text"class="form-control">
@@ -100,7 +101,7 @@
 	</div>
 	<div class="popup-form new-project">
 		<header>
-			<p class="pull-left">New Project</p>
+			<p class="pull-left">New Task</p>
 			<div class="actions pull-right">
 				<i title="Minimze "class="ion-minus-round"></i>
 				<i title="Close" class="ion-close-round"></i>
@@ -121,7 +122,7 @@
 	</div>
 	<div style="z-index: 20" class="popup-form update-client">
         <header>
-            <p class="pull-left">Update Client</p>
+            <p class="pull-left">Update Teacher</p>
             <div class="actions pull-right">
                 <i title="Minimze "class="ion-minus-round"></i>
                 <i title="Close" class="ion-close-round"></i>
@@ -133,7 +134,7 @@
                 <span v-if="msg.success != null" class="status-msg success-msg">@{{ msg.success }}</span>
                 <span v-if="msg.error != null" class="status-msg error-msg">@{{ msg.error }}</span>
                 <span class="status-msg"></span>
-                <input v-model="currentClient.name" placeholder="Client Name" type="text" class="form-control first">
+                <input v-model="currentClient.name" placeholder="Teacher Name" type="text" class="form-control first">
                 <input v-model="currentClient.email" placeholder="Email" type="text" class="form-control">
                 <input v-model="currentClient.point_of_contact" placeholder="Point Of Contact" type="text" class="form-control">
                 <input v-model="currentClient.phone_number" placeholder="Contact Number" type="text"class="form-control">

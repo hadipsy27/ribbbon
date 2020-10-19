@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="special-form">
-        <a href="{{ route('home') }}"><img src="{{ \App\Helpers\Helpers::logoUrl()  }}" alt=""></a>
+        {{-- <a href="{{ route('home') }}"><img src="{{ \App\Helpers\Helpers::logoUrl()  }}" alt=""></a> --}}
         <h3 class="text-center">REGISTER</h3>
         @if ($errors->first())
             <span class="status-msg error-msg">{{ $errors->first() }}</span>

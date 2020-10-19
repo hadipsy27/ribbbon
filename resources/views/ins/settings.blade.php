@@ -19,6 +19,7 @@
                         <p class="name">@{{ user.full_name }}</p>
                         <p class="color-primary">@{{ user.email }}</p>
                         <p class="color-primary">@{{ user.title }}</p>
+                        <p class="color-primary">@{{ user.nomor_induk }}</p>
                     </div>
                     <div class="clearfix"></div>
                     <br>
@@ -58,7 +59,7 @@
                         <p v-if="msg.success != null" class="status-msg success-msg">@{{ msg.success }}</p>
                         <div class="links">
                             <a class="" data-id="settings_info" href="">Personal Info</a>
-                            <a class="" data-id="settings_links" href="">Links</a>
+                            {{-- <a class="" data-id="settings_links" href="">Links</a> --}}
                             <a class="" data-id="settings" href="">Account Settings</a>
                         </div>
                         <div class="content">
@@ -74,8 +75,12 @@
                                             <input v-model="user.email" type="text" class="form-control" placeholder="Email">
                                         </div>
                                         <div class="form-group">
-                                            <label>Title</label>
-                                            <input v-model="user.title" type="title" class="form-control" placeholder="Title">
+                                            <label>Nomor Induk</label>
+                                            <input v-model="user.nomor_induk" type="text" class="form-control" placeholder="Nomor Induk">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Program Studi</label>
+                                            <input v-model="user.title" type="title" class="form-control" placeholder="Program Studi">
                                         </div>
                                         <div class="form-group">
                                             <label>Bio</label>
@@ -86,7 +91,7 @@
                                     </form>
                                 </div>
                             </div>
-                            <div class="item" id="settings_links">
+                            {{-- <div class="item" id="settings_links">
                                 <div class="input-group">
                                     <span class="input-group-addon">Link</span>
                                     <input v-model="user.link" type="text" class="form-control" placeholder="http://www.Yourwebsite.com/">
@@ -103,10 +108,18 @@
                                     <span class="input-group-addon">https://Linkedin.com/</span>
                                     <input v-model="user.linkedin" type="text" class="form-control" placeholder="username">
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="item" id="settings">
-                                <label>Current Password</label>
+                                {{-- <div class="input-group">
+                                    <span class="input-group-addon">Link</span>
+                                    <input v-model="user.link" type="text" class="form-control" placeholder="http://www.Yourwebsite.com/">
+                                </div><br> --}}
                                 {!! Form::open(array('action' => array('UsersController@resetPassword', Auth::id() ))) !!}
+                                <div class="form-group">
+                                    <label>Link</label>
+                                    <input v-model="user.link" type="text" class="form-control" placeholder="http://www.Yourwebsite.com/">
+                                </div><hr>
+                                <label>Current Password</label>
                                 <div class="form-group">
                                     {!! Form::password( 'current_pwd', array('class' => 'form-control', "placeholder" => "Current Password" )) !!}
                                 </div>
@@ -115,11 +128,11 @@
                                     {!! Form::password( 'new_pwd', array('class' => 'form-control', "placeholder" => "New Password" )) !!}
                                 </div>
                                 <div class="form-group">
-                                    {!! Form::submit( 'Update Password', array('class' => 'btn btn-default pull-right')) !!}
+                                    {!! Form::submit( 'Update Password', array('class' => 'btn btn-block pull-left')) !!}
                                     <div class="clearfix"></div>
                                 </div>
                                 {!! Form::close() !!}
-                                <hr>
+                                {{-- <hr>
                                 <label>Delete account</label>
                                 <p>Enable the delete button by typing delete below</p>
                                 <p class="dim">Deleting your account will delete <b>ALL</b>, clients, projects and tasks created under this account</p>
@@ -127,7 +140,7 @@
                                 <br>
                                 <div v-if="delete_text == 'delete' ">
                                     <button v-on:click="delete()" id="delete-account" class="btn btn-danger">Delete my account</button>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>

@@ -4,26 +4,26 @@
 	<div class="row" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml"
 		 xmlns:v-on="http://www.w3.org/1999/xhtml">
 		<div class="col-xs-12 page-title-section">
-			<h1 class="pull-left">Hud</h1>
+			<h1 class="pull-left">Home</h1>
 		</div>
 	</div>
 
 	<div id="hud" class="row">
         <div class="col-xs-12 col-sm-4">
             <div class="jumbotron text-center">
-                <p class="dim">Clients</p>
+                <p class="dim">Teacher</p>
                 <h1>@{{ clients }}</h1>
             </div>
         </div>
         <div class="col-xs-12 col-sm-4">
             <div class="jumbotron text-center">
-                <p class="dim">Projects</p>
+                <p class="dim">Task</p>
                 <h1>@{{ projects.length }}</h1>
             </div>
         </div>
         <div class="col-xs-12 col-sm-4">
             <div class="jumbotron text-center">
-                <p class="dim">Tasks</p>
+                <p class="dim">Board</p>
                 <h1>@{{ tasks }}</h1>
             </div>
         </div>
@@ -31,8 +31,8 @@
         <div class="col-xs-6">
             <div class="project-list-container">
                 <template v-if="projects.length > 0">
-                    <h4>My Projects</h4>
-                    <input placeholder="Search projects" type="text" class="form-control" v-model="my_project_text">
+                    <h4>My Task</h4>
+                    <input placeholder="Search tasks" type="text" class="form-control" v-model="my_project_text">
                     <hr>
                     <table class="table table-striped">
                         <thead>
@@ -59,8 +59,8 @@
 
                 <template v-if="projects.length == 0">
                     <p class="alert alert-warning">
-                        Your projects will be listed here once you create some.
-                        Create a new project within the <a href="{{ route('clients') }}">clients</a> page.
+                        Your Tasks will be listed here once you create some.
+                        Create a new task within the <a href="{{ route('clients') }}">Task</a> page.
                     </p>
                 </template>
             </div>
@@ -69,8 +69,8 @@
         <div class="col-xs-6">
             <div class="project-list-container">
                 <template v-if="sharedProjects.length > 0">
-                    <h4>Projects Shared With Me</h4>
-                    <input placeholder="Search projects" type="text" class="form-control" v-model="my_sproject_text">
+                    <h4>Tasks Shared With Me</h4>
+                    <input placeholder="Search Tasks" type="text" class="form-control" v-model="my_sproject_text">
                     <hr>
                     <table class="table table-striped">
                         <thead>
@@ -97,8 +97,8 @@
 
                 <template v-if="sharedProjects.length == 0">
                     <p class="alert alert-warning">
-                        Projects that you have been invited to will show up here. Currently
-                        you have not been invited to any project.
+                        Tasks that you have been invited to will show up here. Currently
+                        you have not been invited to any Task.
                     </p>
                 </template>
             </div>

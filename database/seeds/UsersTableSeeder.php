@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder {
 		    array(
 		    	'full_name' 		=>	$faker->name,
 		    	'email' 			=> 	'test@ribbbon.com',
-		    	'password'			=>	Hash::make('secret'),
+		    	'password'			=>	Hash::make('password'),
 		    	'tasks_created' 	=> 	1,
 		    	)
 		);

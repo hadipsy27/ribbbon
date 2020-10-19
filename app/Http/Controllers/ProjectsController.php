@@ -43,7 +43,7 @@ class ProjectsController extends BaseController {
 			}
 		}
 
-		return $this->setStatusCode(200)->makeResponse('Projects retrieved successfully',$projects->toArray());
+		return $this->setStatusCode(200)->makeResponse('Taks retrieved successfully',$projects->toArray());
 	}
 
     // Get all projects that the Auth user is a member of
@@ -66,50 +66,50 @@ class ProjectsController extends BaseController {
                 $project["totalWeight"] = $totalWeight;
             }
         }
-        return $this->setStatusCode(200)->makeResponse('Projects retrieved successfully',$sharedProjects);
+        return $this->setStatusCode(200)->makeResponse('Taks retrieved successfully',$sharedProjects);
     }
 
 	//	Return the given project
 	public function getProject($id){
 		if (!Project::find($id)) {
-			return $this->setStatusCode(404)->makeResponse('The project was not found');
+			return $this->setStatusCode(404)->makeResponse('The task was not found');
 		}
 
 		$project = Project::find($id);
 		$project->tasks = Task::where('project_id', $id)->get();
 		$project->credentials = Credential::where('project_id', $id)->get();
 
-		return $this->setStatusCode(200)->makeResponse('Project was successfully found', $project);
+		return $this->setStatusCode(200)->makeResponse('Task was successfully found', $project);
 	}
 
 	// Insert the given project into the database
 	public function storeProject(){
 		if (!Input::all() || strlen(trim(Input::get('name'))) == 0) {
-			return $this->setStatusCode(406)->makeResponse('No information provided to create project');
+			return $this->setStatusCode(406)->makeResponse('No information provided to create task');
 		}
 
 		Input::merge(array('user_id' => Auth::id()));
 		Project::create(Input::all());
 		$id = \DB::getPdo()->lastInsertId();
 
-		return $this->setStatusCode(200)->makeResponse('Project created successfully', Project::find($id));
+		return $this->setStatusCode(200)->makeResponse('Task created successfully', Project::find($id));
 	}
 
 	// Update the given project
 	public function updateProject($id){
 		if ( Input::get('name') === "") {
-			return $this->setStatusCode(406)->makeResponse('The project needs a name');
+			return $this->setStatusCode(406)->makeResponse('The task needs a name');
 		}
 
 		if (!Project::find($id)) {
-			return $this->setStatusCode(404)->makeResponse('Project not found');
+			return $this->setStatusCode(404)->makeResponse('Task not found');
 		}
 
 		$input = Input::all();
 		unset($input['_method']);
 
 		Project::find($id)->update($input);
-		return $this->setStatusCode(200)->makeResponse('The project has been updated');
+		return $this->setStatusCode(200)->makeResponse('The task has been updated');
 	}
 
     public function getOwner($id){
@@ -164,19 +164,19 @@ class ProjectsController extends BaseController {
 		$pu->save();
 
 		Helpers::sendProjectInviteMail($email, $project_name, $project_url);
-		return $this->setStatusCode(200)->makeResponse('A new member has been added to this project.', $invited_user);
+		return $this->setStatusCode(200)->makeResponse('A new member has been added to this task.', $invited_user);
 	}
 
     // Removes a member from a given project
 	public function removeMember($project_id, $member_id){
 		if( count(Projectuser::whereUserId($member_id)->whereProjectId($project_id)->get()) == 0 ){
-			return $this->setStatusCode(406)->makeResponse('That user is not in this project.');
+			return $this->setStatusCode(406)->makeResponse('That user is not in this task.');
 		}
 
 		$project = Project::find($project_id);
 		$project->members()->detach($member_id);
 
-		return $this->setStatusCode(200)->makeResponse('Member has been removed from this project.');
+		return $this->setStatusCode(200)->makeResponse('Member has been removed from this task.');
 	}
 
 }
