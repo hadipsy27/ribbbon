@@ -38,6 +38,7 @@ var userObj = new Vue({
                 },
                 error: function(e){
                     // do nothing
+                    alert('Ini error gais');
                 }
             });
         },

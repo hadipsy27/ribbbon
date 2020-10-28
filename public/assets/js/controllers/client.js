@@ -107,8 +107,8 @@ var client = new Vue({
 
         showSheet();
         makePrompt(
-            "Are you sure you want to delete the client: "+currentClient.name+"?",
-            "By deleting this client you will loose all data associated with any project under this client",
+            "Are you sure you want to delete : "+currentClient.name+"?",
+            "By deleting this you will loose all data associated with any project",
             "Not now", "Yes");
 
         $("#cancel-btn").click(function(){
