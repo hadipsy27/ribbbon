@@ -123,7 +123,7 @@ img {
   left: 0;
   width: 250px;
   height: 100%;
-  background-color: #3e3e3e;
+  background-color: #0f3057;
   color: rgba(150, 150, 150, 0.2); }
 
 .side-nav a {
@@ -187,7 +187,7 @@ img {
   font-size: .95em;
   box-sizing: border-box;
   padding: 6px 16px;
-  border-left: 4px solid #3e3e3e; }
+  border-left: 4px solid #0f3057; }
 
 .side-nav .menu a:hover,
 .side-nav .menu a.active {
@@ -590,7 +590,7 @@ img {
   overflow: auto; }
 
 .settings-container .left-side {
-  background-color: #3e3e3e;
+  background-color: #0f3057;
   padding: 10px 20px;
   height: 600px; }
 

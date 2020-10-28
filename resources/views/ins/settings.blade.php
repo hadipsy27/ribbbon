@@ -25,9 +25,9 @@
                     <br>
                     <div class="links">
                         <p v-if="user.link">
-                            <a target="_blank" href="">
+                            {{-- <a target="_blank" href="">
                                 <span class="ion-ios-world-outline"></span> @{{ user.link }}
-                            </a>
+                            </a> --}}
                         </p>
                         <p v-if="user.twitter">
                             <a target="_blank" href="https://twitter.com/@{{ user.twitter }}">
@@ -115,10 +115,6 @@
                                     <input v-model="user.link" type="text" class="form-control" placeholder="http://www.Yourwebsite.com/">
                                 </div><br> --}}
                                 {!! Form::open(array('action' => array('UsersController@resetPassword', Auth::id() ))) !!}
-                                <div class="form-group">
-                                    <label>Link</label>
-                                    <input v-model="user.link" type="text" class="form-control" placeholder="http://www.Yourwebsite.com/">
-                                </div><hr>
                                 <label>Current Password</label>
                                 <div class="form-group">
                                     {!! Form::password( 'current_pwd', array('class' => 'form-control', "placeholder" => "Current Password" )) !!}

@@ -51,7 +51,8 @@
                     <div class="links">
                         <a  data-id="tab_tasks" href="">Tasks (@{{ numTasks }})</a>
                         <a  data-id="tab_backlog" href="">Backlog (@{{ numBacklogTasks }})</a>
-                        <a  data-id="tab_credentials" href="">Credentials (@{{ numCredentials }})</a>
+                        {{-- <a  data-id="tab_credentials" href="">Credentials (@{{ numCredentials }})</a> --}}
+                        <a  data-id="tab_credentials" href="">Upload Tugas</a>
                         <a  data-id="tab_members" href="">Members</a>
                     </div>
                     <div class="content">

@@ -151,8 +151,8 @@ class ProjectsController extends BaseController {
         $invited_user = $invited_user[0];
 
         if( count(Projectuser::whereUserId($invited_user->id)->whereProjectId($project_id)->get()) != 0 ){
-			return $this->setStatusCode(406)->makeResponse('A user with that email has already been invited.');
-		}
+					return $this->setStatusCode(406)->makeResponse('A user with that email has already been invited.');
+				}
 
         // if(Auth::id() != $owner_id){
         //     return $this->setStatusCode(406)->makeResponse('Only the project owner can invite a user.');
@@ -162,9 +162,9 @@ class ProjectsController extends BaseController {
 		$pu->project_id	=	$project_id;
 		$pu->user_id	=	$invited_user->id;
 		$pu->save();
-
-		Helpers::sendProjectInviteMail($email, $project_name, $project_url);
 		return $this->setStatusCode(200)->makeResponse('A new member has been added to this task.', $invited_user);
+
+		// Helpers::sendProjectInviteMail($email, $project_name, $project_url);
 	}
 
     // Removes a member from a given project
