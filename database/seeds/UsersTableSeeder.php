@@ -15,7 +15,8 @@ class UsersTableSeeder extends Seeder {
 		DB::table('users')->truncate();
 		DB::table('users')->insert(
 		    array(
-		    	'full_name' 		=>	$faker->name,
+					'full_name' 		=>	$faker->name,
+					'nim'					=> 123456789,
 		    	'email' 			=> 	'test@ribbbon.com',
 		    	'password'			=>	Hash::make('password'),
 		    	'tasks_created' 	=> 	1,
