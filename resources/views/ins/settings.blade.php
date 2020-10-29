@@ -19,7 +19,7 @@
                         <p class="name">@{{ user.full_name }}</p>
                         <p class="color-primary">@{{ user.email }}</p>
                         <p class="color-primary">@{{ user.title }}</p>
-                        <p class="color-primary">@{{ user.nomor_induk }}</p>
+                        <p class="color-primary">@{{ user.nim }}</p>
                     </div>
                     <div class="clearfix"></div>
                     <br>
@@ -75,8 +75,8 @@
                                             <input v-model="user.email" type="text" class="form-control" placeholder="Email">
                                         </div>
                                         <div class="form-group">
-                                            <label>Nomor Induk</label>
-                                            <input v-model="user.nomor_induk" type="text" class="form-control" placeholder="Nomor Induk">
+                                            <label>Registration Number</label>
+                                            <input v-model="user.nim" type="text" class="form-control" placeholder="Registration Number">
                                         </div>
                                         <div class="form-group">
                                             <label>Program Studi</label>

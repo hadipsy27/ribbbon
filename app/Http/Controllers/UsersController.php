@@ -63,6 +63,7 @@ class UsersController extends BaseController {
 	public function register()
 	{	
 		$fullName	=	Input::get('fullName');
+		$nim	=	Input::get('nim');
 		$email 		=	Input::get('email');
 		$password	=	Input::get('password');	
 
@@ -70,11 +71,13 @@ class UsersController extends BaseController {
 		$validator = Validator::make(
 			array(
 					'fullName' 	=> 	$fullName,
+					'nim' 	=> 	$nim,
 					'email' 	=>	$email,
 					'password' 	=> 	$password
 			),
 			array(
 					'fullName' 	=> 	'required',
+					'nim' 	=> 	'required',
 					'email'		=> 	'required|email|unique:users',
 					'password'	=>	'required|min:8'
 			)
@@ -86,12 +89,13 @@ class UsersController extends BaseController {
 
 		$user 				=	new User;
 		$user->full_name 	=	$fullName;
+		$user->nim 	=	$nim;
 		$user->email 		=	$email;
 		$user->password 	=	Hash::make($password);
 
 		$user->save();	
 
-		if ( Auth::attempt(array('email' => $email, 'password' => $password)) ) {
+		if ( Auth::attempt(array('email' => $email, 'nim' => $nim, 'password' => $password)) ) {
 			// Helpers::sendWelcomeMail();
 			return Redirect::to('hud');
 		}

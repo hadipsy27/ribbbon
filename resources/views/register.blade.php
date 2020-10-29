@@ -15,6 +15,10 @@
             {!! Form::text('fullName', null, array('class' => 'form-control', "placeholder" => "Full name", "autofocus" => "true" )) !!}
         </div>
         <div class="form-group">
+            <label for="nim" class="color-primary">Registration Number:</label>
+            {!! Form::text('nim', null, array('class' => 'form-control', "placeholder" => "Registration Number", "autofocus" => "true" )) !!}
+        </div>
+        <div class="form-group">
             <label for="email" class="color-primary">Email:</label>
             {!! Form::text('email', null, array('class' => 'form-control', "placeholder" => "Email" )) !!}
         </div>
