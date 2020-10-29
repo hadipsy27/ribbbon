@@ -32,17 +32,17 @@ class UsersController extends BaseController {
 	// Login the user
 	public function login()
 	{				
-		$email 		=	Input::get('email');
+		$nim 		=	Input::get('nim');
 		$password	=	Input::get('password');
 
 		// lets validate the users input
 		$validator = Validator::make(
 			array(
-					'email' 	=>	$email,
+					'nim' 	=>	$nim,
 					'password' 	=> 	$password
 			),
 			array(
-					'email'		=> 	'required|email',
+					'nim'		=> 	'required|nim',
 					'password'	=>	'required'
 			)
 		);
@@ -50,10 +50,10 @@ class UsersController extends BaseController {
 		if ($validator->fails()){
 		    return Redirect::back()->withErrors($validator)->withInput();
 		}else{
-			if( Auth::attempt(array('email' => $email, 'password' => $password)) ){				
+			if( Auth::attempt(array('nim' => $nim, 'password' => $password)) ){				
 				return Redirect::to('hud');
 			}else{				
-				$validator->getMessageBag()->add('input', 'Incorrect email or password');
+				$validator->getMessageBag()->add('input', 'Incorrect nim or password');
 				return Redirect::back()->withErrors($validator)->withInput();;
 			}			
 		}
