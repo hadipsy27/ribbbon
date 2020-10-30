@@ -23,11 +23,11 @@
                     </div>
                     <div class="clearfix"></div>
                     <br>
-                    <div class="links">
+                    {{-- <div class="links">
                         <p v-if="user.link">
-                            {{-- <a target="_blank" href="">
+                            <a target="_blank" href="">
                                 <span class="ion-ios-world-outline"></span> @{{ user.link }}
-                            </a> --}}
+                            </a>
                         </p>
                         <p v-if="user.twitter">
                             <a target="_blank" href="https://twitter.com/@{{ user.twitter }}">
@@ -45,7 +45,8 @@
                             </a>
                         </p>
                     </div>
-                    <hr>
+                    <hr> --}}
+                    
 
                     <div class="bio">
                         <p>BIO<p>
@@ -110,10 +111,6 @@
                                 </div>
                             </div> --}}
                             <div class="item" id="settings">
-                                {{-- <div class="input-group">
-                                    <span class="input-group-addon">Link</span>
-                                    <input v-model="user.link" type="text" class="form-control" placeholder="http://www.Yourwebsite.com/">
-                                </div><br> --}}
                                 {!! Form::open(array('action' => array('UsersController@resetPassword', Auth::id() ))) !!}
                                 <label>Current Password</label>
                                 <div class="form-group">

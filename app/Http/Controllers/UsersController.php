@@ -135,13 +135,15 @@ class UsersController extends BaseController {
 			)
 		);
 
-		if ($validator->fails()){
-		    return Redirect::back()->withErrors($validator)->with('user', $user)->with('created', $created)->with('completed', $completed);
-		}
+		
 
-		if ( !Auth::validate(array('email' => $user->email, 'password' => $current_pwd)) ) {
+		if ( !Auth::validate(array('nim' => $user->nim, 'password' => $current_pwd)) ) {
 			$validator->getMessageBag()->add('password', 'That password is incorrect');
 			return Redirect::back()->withErrors($validator)->with('user', $user)->with('created', $created)->with('completed', $completed);	
+		}
+
+		if ($validator->fails()){
+			return Redirect::back()->withErrors($validator)->with('user', $user)->with('created', $created)->with('completed', $completed);
 		}
 
 		// Store the new password and redirect;

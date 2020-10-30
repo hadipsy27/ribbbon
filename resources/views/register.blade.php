@@ -2,9 +2,9 @@
 
 @section('content')
 
-    <div class="special-form">
+    <div class="special-form-register">
         {{-- <a href="{{ route('home') }}"><img src="{{ \App\Helpers\Helpers::logoUrl()  }}" alt=""></a> --}}
-        <h3 class="text-center">REGISTER</h3>
+        <h3 class="text-center"><b>REGISTER</b></h3>
         @if ($errors->first())
             <span class="status-msg error-msg">{{ $errors->first() }}</span>
         @endif

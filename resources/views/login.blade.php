@@ -4,7 +4,7 @@
 
   <div class="special-form">
       {{-- <a href="{{ route('home') }}"><img src="{{ \App\Helpers\Helpers::logoUrl()  }}" alt=""></a> --}}
-      <h3 class="text-center">LOGIN</h3>
+      <h3 class="text-center"><b>LOGIN</b></h3>
       @if ($errors->first())
           <span class="status-msg error-msg">{{ $errors->first() }}</span>
       @endif
