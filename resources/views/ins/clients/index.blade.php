@@ -5,8 +5,8 @@
 <div id="client">
     <div class="row">
         <div class="col-xs-12 page-title-section">
-            <h1 class="pull-left">Teacher</h1>
-            <a v-on:click="showCreateForm()" class="btn btn-primary pull-right" title="Create new client">+ New Teacher</a>
+            <h1 class="pull-left">Courses</h1>
+            <a v-on:click="showCreateForm()" class="btn btn-primary pull-right" title="Create new client">+ New Course</a>
             <div class="clearfix"></div>
         </div>
     </div>
@@ -28,9 +28,9 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div>
-                                    <p><label>Contact name: </label> @{{client.point_of_contact}}</p>
-                                    <p><label>Contact number: </label> @{{client.phone_number}}</p>
-                                    <p><label>Contact email: </label> <a href="mailto:@{{client.email}}">@{{client.email}}</a></p>
+                                    <p><label>Group: </label> @{{client.point_of_contact}}</p>
+                                    <p><label>Class: </label> @{{client.phone_number}}</p>
+                                    <p><label>Semester: </label> @{{client.email}}</a></p>
                                 </div>
                             </header>
                             <hr>
@@ -70,14 +70,14 @@
         <p class="alert alert-warning">
             {{-- Your clients will be listed here once you create some.
             Create a new Client <a v-on:click="showCreateForm()">now</a>. --}}
-            Your Task is Empty
+            Your Course is Empty
         </p>
     </template>
 
 	{{-- FORMS --}}
 	<div class="popup-form new-client">
 		<header>
-			<p class="pull-left">New Teacher</p>
+			<p class="pull-left">New Courses</p>
 			<div class="actions pull-right">
 				<i title="Minimze "class="ion-minus-round"></i>
 				<i title="Close" class="ion-close-round"></i>
@@ -88,10 +88,10 @@
 			<form>
 				<span v-if="msg.success != null" class="status-msg success-msg">@{{ msg.success }}</span>
 				<span v-if="msg.error != null" class="status-msg error-msg">@{{ msg.error }}</span>
-				<input v-model="client.name" placeholder="Teacher Name" type="text" class="form-control first">
-				<input v-model="client.email" placeholder="Email" type="text" class="form-control">
-				<input v-model="client.point_of_contact" placeholder="Point Of Contact" type="text" class="form-control">
-				<input v-model="client.phone_number" placeholder="Contact Number" type="text"class="form-control">
+				<input v-model="client.name" placeholder="Course Name" type="text" class="form-control first">
+				<input v-model="client.email" placeholder="Semester" type="text" class="form-control">
+				<input v-model="client.point_of_contact" placeholder="Group Name" type="text" class="form-control">
+				<input v-model="client.phone_number" placeholder="Class" type="text"class="form-control">
 			</form>
 		</section>
 		<footer>
@@ -122,7 +122,7 @@
 	</div>
 	<div style="z-index: 20" class="popup-form update-client">
         <header>
-            <p class="pull-left">Update Teacher</p>
+            <p class="pull-left">Update Course</p>
             <div class="actions pull-right">
                 <i title="Minimze "class="ion-minus-round"></i>
                 <i title="Close" class="ion-close-round"></i>
@@ -134,10 +134,10 @@
                 <span v-if="msg.success != null" class="status-msg success-msg">@{{ msg.success }}</span>
                 <span v-if="msg.error != null" class="status-msg error-msg">@{{ msg.error }}</span>
                 <span class="status-msg"></span>
-                <input v-model="currentClient.name" placeholder="Teacher Name" type="text" class="form-control first">
-                <input v-model="currentClient.email" placeholder="Email" type="text" class="form-control">
-                <input v-model="currentClient.point_of_contact" placeholder="Point Of Contact" type="text" class="form-control">
-                <input v-model="currentClient.phone_number" placeholder="Contact Number" type="text"class="form-control">
+                <input v-model="currentClient.name" placeholder="Course Name" type="text" class="form-control first">
+                <input v-model="currentClient.email" placeholder="Semester" type="text" class="form-control">
+                <input v-model="currentClient.point_of_contact" placeholder="Group name" type="text" class="form-control">
+                <input v-model="currentClient.phone_number" placeholder="Classes" type="text"class="form-control">
             </form>
         </section>
         <footer>

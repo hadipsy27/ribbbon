@@ -11,10 +11,12 @@
                 <p><span class="dim">Description:</span> @{{ project.description }}</p>
             </div>
             <div class="col-sm-12 col-md-6 no-side-padding">
-                    <a v-if="project.production != '' " href="@{{ project.production }} " target="_blank" class="pull-right"><span class="label label-default"><i class="ion-ios-world-outline"></i> Production</span></a>
-                    <a v-if="project.dev != '' " href="@{{ project.dev }}" target="_blank" class="pull-right"><span class="label label-default"><i class="ion-ios-world-outline"></i> Development</span></a>
-                    <a v-if="project.github != '' " href="@{{ project.github }}" target="_blank" class="pull-right"><span class="label label-default"><i class="ion-fork-repo"></i> Version Control</span></a>
+                    {{-- <a v-if="project.production != '' " href="@{{ project.production }} " target="_blank" class="pull-right"><span class="label label-default"><i class="ion-ios-world-outline"></i> Production</span></a>
+                    <a v-if="project.dev != '' " href="@{{ project.dev }}" target="_blank" class="pull-right"><span class="label label-default"><i class="ion-ios-world-outline"></i> Development</span></a> --}}
+                    {{-- <a v-if="project.github != '' " href="@{{ project.github }}" target="_blank" class="pull-right"><span class="label label-default"><i class="ion-fork-repo"></i> Link Project</span></a> --}}
+                    <a v-if="project.github != '' " class="pull-right"><span class="label label-default"><i class="ion-fork-repo"></i> @{{ project.github }}</span></a>
             </div>
+            
             <div class="clearfix"></div>
             <p>
                 <hr>
@@ -45,14 +47,14 @@
         <div class="col-xs-12">
             <div class="main-section">
                 <div class="pull-right">
-                    <button v-on:click="showTaskCreateForm()" style="position: relative; z-index: 10" class="btn btn-primary"><span class="ion-plus-circled"></span> New Task</button>
+                    <button v-on:click="showTaskCreateForm()" style="position: relative; z-index: 10" class="btn btn-primary"><span class="ion-plus-circled"></span> New Board</button>
                 </div>
                 <div class="mega-menu mega-menu-tab">
                     <div class="links">
                         <a  data-id="tab_tasks" href="">Tasks (@{{ numTasks }})</a>
                         <a  data-id="tab_backlog" href="">Backlog (@{{ numBacklogTasks }})</a>
                         {{-- <a  data-id="tab_credentials" href="">Credentials (@{{ numCredentials }})</a> --}}
-                        <a  data-id="tab_credentials" href="">Upload Tugas</a>
+                        {{-- <a  data-id="tab_credentials" href="">Upload Tugas</a> --}}
                         <a  data-id="tab_members" href="">Members</a>
                     </div>
                     <div class="content">

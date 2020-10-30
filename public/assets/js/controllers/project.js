@@ -40,24 +40,24 @@ var project = new Vue({
 
             return finalNum;
         },
-        numProgressTasks: function(){
+        numDoingTasks: function(){
             var tasks = this.project.tasks;
             var finalNum = 0;
 
             for (var i = 0; i < tasks.length; i++){
-                if( tasks[i].state == "progress" ){
+                if( tasks[i].state == "doing" ){
                     finalNum++;
                 }
             }
 
             return finalNum;
         },
-        numTestingTasks: function(){
+        numProsesTasks: function(){
             var tasks = this.project.tasks;
             var finalNum = 0;
 
             for (var i = 0; i < tasks.length; i++){
-                if( tasks[i].state == "testing" ){
+                if( tasks[i].state == "proses" ){
                     finalNum++;
                 }
             }

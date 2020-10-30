@@ -36,7 +36,7 @@
                 <tr v-for="member in members">
                     <td>@{{ $index + 2 }}</td>
                     <td><a href="">@{{ member.full_name }}</a></td>
-                    @{{owner.full_name}}
+                    {{-- @{{owner.full_name}} --}}
                     {{-- <template v-if="@{{owner.full_name}}"> --}}
                     <td style="font-size: 1.5em">
                         {{-- @{{owner.full_name}} --}}

@@ -1,8 +1,8 @@
 <div class="row task-list-row">
     <div class="col-xs-12 col-md-4">
         <ul class="task-list">
-            <h5 class="title">In Progress (@{{ numProgressTasks }})</h5>
-            <li v-on:click="editMode(task)" v-for="task in project.tasks | filterBy 'progress' in 'state' " class="task-@{{ task.id }}" >
+            <h5 class="title">To-do (@{{ numDoingTasks }})</h5>
+            <li v-on:click="editMode(task)" v-for="task in project.tasks | filterBy 'doing' in 'state' " class="task-@{{ task.id }}" >
                 <div>
                     <div class="pull-left">w.@{{ task.weight }}</div>
                     <div class="show-on-hover pull-right">
@@ -20,8 +20,8 @@
     </div>
     <div class="col-xs-12 col-md-4">
         <ul class="task-list">
-            <h5 class="title">Testing (@{{ numTestingTasks }})</h5>
-            <li v-on:click="editMode(task)" v-for="task in project.tasks | filterBy 'testing' in 'state' " class="task-@{{ task.id }}" >
+            <h5 class="title">In Prosess (@{{ numProsesTasks }})</h5>
+            <li v-on:click="editMode(task)" v-for="task in project.tasks | filterBy 'proses' in 'state' " class="task-@{{ task.id }}" >
                 <div>
                     <div class="pull-left">w.@{{ task.weight }}</div>
                     <div class="show-on-hover pull-right">

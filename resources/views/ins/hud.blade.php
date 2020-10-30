@@ -11,7 +11,7 @@
 	<div id="hud" class="row">
         <div class="col-xs-12 col-sm-4">
             <div class="jumbotron text-center">
-                <p class="dim">Teacher</p>
+                <p class="dim">Courses</p>
                 <h1>@{{ clients }}</h1>
             </div>
         </div>

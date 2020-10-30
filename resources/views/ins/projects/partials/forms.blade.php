@@ -1,7 +1,7 @@
 {{-- Update Project--}}
 <div style="z-index: 20" class="popup-form update-project">
     <header>
-        <p class="pull-left">Update Project</p>
+        <p class="pull-left">Update Task</p>
         <div class="actions pull-right">
             <i title="Minimize" class="ion-minus-round"></i>
             <i title="Close" class="ion-close-round"></i>
@@ -16,16 +16,16 @@
                 <label>Name:</label>
                 <input v-model="project.name" type="text" class="form-control first">
             </div>
-            <div class="col-xs-12 no-side-padding">
+            {{-- <div class="col-xs-12 no-side-padding">
                 <label>Production Url:</label>
                 <input v-model="project.production" type="text" class="form-control">
             </div>
             <div class="col-xs-12 no-side-padding">
                 <label>Development Url:</label>
                 <input v-model="project.dev" type="text" class="form-control">
-            </div>
+            </div> --}}
             <div class="col-xs-12 no-side-padding">
-                <label>Github (or other):</label>
+                <label>Link Task (Github or other):</label>
                 <input v-model="project.github" type="text" class="form-control">
             </div>
             <label>Description:</label>
@@ -87,8 +87,8 @@
                 <label>State:</label>
                 <select v-model="newTask.state" class="form-control">
                     <option>backlog</option>
-                    <option selected>progress</option>
-                    <option>testing</option>
+                    <option selected>doing</option>
+                    <option>proses</option>
                     <option>complete</option>
                 </select>
             </div>
@@ -150,8 +150,8 @@
                 <label>State:</label>
                 <select v-model="currentTask.state" class="form-control">
                     <option>backlog</option>
-                    <option selected>progress</option>
-                    <option>testing</option>
+                    <option selected>doing</option>
+                    <option>proses</option>
                     <option>complete</option>
                 </select>
             </div>
