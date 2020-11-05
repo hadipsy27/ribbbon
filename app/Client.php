@@ -13,7 +13,8 @@ class Client extends Model {
 		'name',
 		'phone_number',
 		'point_of_contact',
-		'email'
+		'email',
+		'teacher'
 	];
 
 	/**

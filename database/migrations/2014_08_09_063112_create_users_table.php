@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration {
 			$table->string('full_name');
 			$table->integer('nim');
 			$table->string('email')->unique();
+			$table->string('teacher');
 			$table->string('password', 60);
 			$table->string('avatar');
 			$table->integer('tasks_created');

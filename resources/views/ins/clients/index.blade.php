@@ -31,6 +31,7 @@
                                     <p><label>Group: </label> @{{client.point_of_contact}}</p>
                                     <p><label>Class: </label> @{{client.phone_number}}</p>
                                     <p><label>Semester: </label> @{{client.email}}</a></p>
+                                    <p><label>Teacher: </label> @{{client.teacher}}</a></p>
                                 </div>
                             </header>
                             <hr>
@@ -92,6 +93,7 @@
 				<input v-model="client.email" placeholder="Semester" type="text" class="form-control">
 				<input v-model="client.point_of_contact" placeholder="Group Name" type="text" class="form-control">
 				<input v-model="client.phone_number" placeholder="Class" type="text"class="form-control">
+				<input v-model="client.teacher" placeholder="Teacher" type="text"class="form-control">
 			</form>
 		</section>
 		<footer>
@@ -138,6 +140,7 @@
                 <input v-model="currentClient.email" placeholder="Semester" type="text" class="form-control">
                 <input v-model="currentClient.point_of_contact" placeholder="Group name" type="text" class="form-control">
                 <input v-model="currentClient.phone_number" placeholder="Classes" type="text"class="form-control">
+                <input v-model="currentClient.teacher" placeholder="Teacher" type="text"class="form-control">
             </form>
         </section>
         <footer>

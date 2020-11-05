@@ -68,3 +68,12 @@ Route::group(['prefix' => '/api/'], function()
 
 //----------------- Admin routes
 Route::get('admin','AdminController@index');
+
+
+// ---- Upload File
+// Route::group(['middleware' => 'web '], function(){
+    Route::get('fileUpload', function(){
+        return view('projects/partials/upload');
+    });
+    Route::post('fileUpload',['as'=> 'fileUpload', 'uses'=>'UploadController@fileUpload']);
+// });

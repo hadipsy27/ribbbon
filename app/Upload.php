@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Upload extends Model {
-	protected $fillable = [];
+	protected $fillable = ['user_id','project_id','file'];
 
     public function user(){
         return $this->belongsTo('App\User');

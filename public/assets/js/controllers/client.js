@@ -67,6 +67,7 @@ var client = new Vue({
 		  	new_client.phone_number = null;
 		  	new_client.point_of_contact = null;
 		  	new_client.email = null;
+		  	new_client.teacher = null;
             $('.popup-form.new-client').find('input[type=text],textarea,select').filter(':visible:first').focus();
           }
 		}); 

@@ -1,4 +1,4 @@
-<form class="credential-form new-credential">
+{{-- <form class="credential-form new-credential">
     <span v-if="msg.success != null" class="status-msg success-msg">@{{ msg.success }}</span>
     <span v-if="msg.error != null" class="status-msg error-msg">@{{ msg.error }}</span>
     <div class="form-group">
@@ -51,4 +51,31 @@
             </tr>
         </tbody>
     </table>
-</template>
+</template> --}}
+@if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <strong>Whooops!</strong>There ware some problems with your input. <br><br>
+        <ul>
+            @foreach ($errors as $error)
+                <li>{{$error}}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+@if ($message = Session::get('success'))
+<div class="alert alert-success alert-block">
+    <button type="button" class="close" data-dismis="alert">x</button>
+    <strong>{{ $message }}</strong>
+    <img src="/images/{{Session::get('path')}}">
+</div>
+@endif
+{!! Form::open(array('route' => 'fileUpload','enctype' => 'multipart/form-data')) !!}
+	<div class="row cancel">
+		<div class="col-md-4">
+			{!! Form::file('image', array('class' => 'image')) !!}
+		</div>
+		<div class="col-md-4">
+			<button type="submit" class="btn btn-info" style="background-color: #26b2ad;">Upload</button>
+		</div>
+	</div>
+{!! Form::close() !!}

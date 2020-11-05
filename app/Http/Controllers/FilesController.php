@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Upload;
+// use App\Upload;
 
 class FilesController extends BaseController {
 
