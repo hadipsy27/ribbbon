@@ -10,7 +10,8 @@ var project = new Vue({
         msg: {success: null, error: null},
         owner: {id: null},
         members: [],
-        invited: {email: null}
+        // invited: {email: null}
+        invited: {nim: null}
     },
     ready: function(){
         this.setupProject();
@@ -363,13 +364,13 @@ var project = new Vue({
             });
         },
         inviteUser: function(project_id){
-            if(this.invited.email == ""){
-                this.invited.email = "";
+            if(this.invited.nim == ""){
+                this.invited.nim = "";
             }
 
             $.ajax({
                 type: 'POST',
-                url: window.baseurl + "/api/projects/"+ project_id +"/"+this.invited.email+"/invite",
+                url: window.baseurl + "/api/projects/"+ project_id +"/"+this.invited.nim+"/invite",
                 data: project.currentCredential,
                 error: function(e) {
                     var response = jQuery.parseJSON(e.responseText);

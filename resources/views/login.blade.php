@@ -12,7 +12,7 @@
     {!! Form::open(array('action' => 'UsersController@login')) !!}
         <div class="form-group">
             <label for="nim" class="color-primary">Registration number:</label>
-            {!! Form::text( 'nim', null, array('class' => 'form-control', "placeholder" => "registration number","autofocus" => "true" )) !!}
+            {!! Form::text( 'nim', null, array('class' => 'form-control', "placeholder" => "Registration Number","autofocus" => "true" )) !!}
         </div>
         <div class="form-group">
             <label for="password" class="color-primary">Password:</label>

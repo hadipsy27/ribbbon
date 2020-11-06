@@ -131,19 +131,19 @@ class ProjectsController extends BaseController {
         return $this->setStatusCode(200)->makeResponse('ok.', $members);
     }
     // Invites a user to the given project.
-	public function invite($project_id, $email){
-        if(trim(strlen($email)) == 0){
-            return $this->setStatusCode(406)->makeResponse('The email field is required!');
+	public function invite($project_id, $nim){
+        if(trim(strlen($nim)) == 0){
+            return $this->setStatusCode(406)->makeResponse('The Registration Number field is required!');
         }
 
-        if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            return $this->setStatusCode(406)->makeResponse('Please enter a valid email!');
+        if(!filter_var($nim, FILTER_VALIDATE_INT)) {
+            return $this->setStatusCode(406)->makeResponse('Please enter a valid Registration Number!');
         }
 
         $project_name	= Project::find($project_id)->pluck('name');
         // $owner_id	    = Project::find($project_id)->pluck('user_id');
         $project_url 	= url() . '/projects/'.$project_id;
-        $invited_user   = User::whereEmail($email)->get();
+        $invited_user   = User::whereNim($nim)->get();
 
         if( count($invited_user) == 0 ){
             return $this->setStatusCode(406)->makeResponse('That user does not have an account.');
@@ -151,7 +151,7 @@ class ProjectsController extends BaseController {
         $invited_user = $invited_user[0];
 
         if( count(Projectuser::whereUserId($invited_user->id)->whereProjectId($project_id)->get()) != 0 ){
-					return $this->setStatusCode(406)->makeResponse('A user with that email has already been invited.');
+					return $this->setStatusCode(406)->makeResponse('A user with that Registration Number has already been invited.');
 				}
 
         // if(Auth::id() != $owner_id){

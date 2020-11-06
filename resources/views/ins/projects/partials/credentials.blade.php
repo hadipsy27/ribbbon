@@ -67,17 +67,20 @@
     <button type="button" class="close" data-dismis="alert">x</button>
     <strong>{{ $message }}</strong>
 </div>
-<img src="/images/{{Session::get('path')}}">
+@if ()
+    <img src="/images/{{Session::get('path')}}">    
+@endif
 @endif
 {!! Form::open(array('route' => 'fileUpload','enctype' => 'multipart/form-data')) !!}
 <div class="container" style="margin-top: 4%">
 	<div class="row cancel">
 		<div class="col-md-4">
-			{!! Form::file('image', array('class' => 'image')) !!}
+            {!! Form::file('image', array('class' => 'image')) !!}
+            <span style="font-size: 10px">image|zip|pdf</span>
 		</div>
 		<div class="col-md-4">
-			<button type="submit" class="btn btn-info" style="background-color: #26b2ad;">Upload</button>
-            <button type="submit" class="btn btn-info"><a href="/images/{{Session::get('path')}}" style="color: white"> Download</a></button>
+            <button type="submit" class="btn btn-info" style="background-color: #26b2ad;">Upload</button>
+            <button type="button" target="_blank" class="btn btn-info"><a href="/images/{{Session::get('path')}}" download="FileName" style="color: white"> Download</a></button>
 		</div>
         
     </div>

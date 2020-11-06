@@ -102,7 +102,7 @@ class UploadController extends Controller
     public function fileUpload(Request $request)
     {
         $this->validate($request,[
-            'image' => 'required|mimes:jpeg,png,jpg,svg,zip|max:2048',
+            'image' => 'required|mimes:jpeg,png,jpg,svg,zip,pdf|max:2048',
 
         ]);
         // $image = $request->file('image');
