@@ -66,16 +66,20 @@
 <div class="alert alert-success alert-block">
     <button type="button" class="close" data-dismis="alert">x</button>
     <strong>{{ $message }}</strong>
-    <img src="/images/{{Session::get('path')}}">
 </div>
+<img src="/images/{{Session::get('path')}}">
 @endif
 {!! Form::open(array('route' => 'fileUpload','enctype' => 'multipart/form-data')) !!}
+<div class="container" style="margin-top: 4%">
 	<div class="row cancel">
 		<div class="col-md-4">
 			{!! Form::file('image', array('class' => 'image')) !!}
 		</div>
 		<div class="col-md-4">
 			<button type="submit" class="btn btn-info" style="background-color: #26b2ad;">Upload</button>
+            <button type="submit" class="btn btn-info"><a href="/images/{{Session::get('path')}}" style="color: white"> Download</a></button>
 		</div>
-	</div>
+        
+    </div>
+</div>
 {!! Form::close() !!}

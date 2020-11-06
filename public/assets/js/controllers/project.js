@@ -91,6 +91,9 @@ var project = new Vue({
         numCredentials: function(){
             return this.project.credentials.length;
         },
+        numFiles: function(){
+            return this.project.files.length;
+        },
         projectProgress: function(){
             var tasks = this.project.tasks;
             var totalWeight = 0;

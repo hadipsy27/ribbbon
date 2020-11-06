@@ -54,7 +54,7 @@
                         <a  data-id="tab_tasks" href="">Tasks (@{{ numTasks }})</a>
                         <a  data-id="tab_backlog" href="">Backlog (@{{ numBacklogTasks }})</a>
                         <a  data-id="tab_credentials" href="">Credentials (@{{ numCredentials }})</a>
-                        {{-- <a  data-id="tab_credentials" href="">Upload Tugas</a> --}}
+                        <a  data-id="tab_files" href="">Upload Tugas</a>
                         <a  data-id="tab_members" href="">Members</a>
                     </div>
                     <div class="content">
@@ -66,6 +66,9 @@
                         </div>
                         <div class="item" id="tab_credentials">
                             @include('ins.projects.partials.credentials')
+                        </div>
+                        <div class="item" id="tab_files">
+                            @include('ins.projects.partials.files')
                         </div>
                         <div class="item" id="tab_members">
                             @include('ins.projects.partials.members')

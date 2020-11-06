@@ -77,3 +77,8 @@ Route::get('admin','AdminController@index');
     });
     Route::post('fileUpload',['as'=> 'fileUpload', 'uses'=>'UploadController@fileUpload']);
 // });
+
+Route::get('projects/{id}/files', function(){
+    return view('projects/partials/files');
+});
+Route::post('projects/{id}/files', array('uses' => 'FilesController@store', 'as' => 'files.store'));

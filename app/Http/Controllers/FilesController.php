@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Auth;
-// use App\Upload;
 
 class FilesController extends BaseController {
 
@@ -15,7 +14,7 @@ class FilesController extends BaseController {
      * Upload the file and store
      * the file path in the DB.
      */
-	public function store()
+	public function store(Request $request)
 	{
         // Rules
         $rules	= array('name' => 'required', 'file' => 'required|max:20000');
@@ -33,7 +32,7 @@ class FilesController extends BaseController {
         // Before anything let's make sure a file was uploaded
         if ( Input::hasFile('file') && Request::file('file')->isValid() )
         {
-
+            
             $current_file = Input::file('file');
             $filename = Auth::id() .'_'. $current_file->getClientOriginalName();
             $current_file->move($directory, $filename);
